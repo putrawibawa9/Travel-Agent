@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .card {
+      width: 300px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .card-header {
+      background-color: #3498db;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .product-image {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .form-container {
+      padding: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 8px;
+    }
+
+    input {
+      padding: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="card-header">
+    <h2>Product Name</h2>
+  </div>
+  <div class="card-body">
+    <img class="product-image" src="product_image.jpg" alt="Product Image">
+    <p><strong>Location:</strong> Product Location</p>
+    <p><strong>Price:</strong> $100</p>
+  </div>
+  <div class="form-container">
+    <form action=""method="post">
+        <input type="hidden" value="<?=$_SESSION['id_pembeli'];?>" name="id_pembeli">
+        <input type="hidden" value="<?= $row['id_wisata'];?>" name="id_wisata">
+        <input type="hidden" value="<?= $row['harga'];?>" name="harga">
+        <input type="hidden" value="<?= date('Y-m-d');?>" name="tgl_pesanan">
+        <button name="submit">Pesan</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
